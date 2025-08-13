@@ -3,7 +3,6 @@ import gsap from "gsap";
 
 import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
-import ComputersCanvas from "../components/Computers";
 import { words } from "../constants";
 
 const Hero = () => {
@@ -21,8 +20,7 @@ const Hero = () => {
         <img src="/images/bg.png" alt="" />
       </div>
 
-      <div className="hero-layout">
-        {/* LEFT: Hero Content */}
+      <div className="hero-layout max-w-7xl mx-auto">
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
@@ -63,13 +61,15 @@ const Hero = () => {
           </div>
         </header>
 
-        {/* RIGHT: 3D Model or Visual */}
-        <figure>
-          <div className="hero-3d-layout">
-            {/* <HeroExperience /> */}
-            <ComputersCanvas />
-          </div>
-        </figure>
+        <div className="w-full max-w-[380px] ml-auto bg-gradient-to-t from-slate-400 via-25% via-slate-400/40 to-65% rounded-[60px] overflow-hidden">
+          <img
+            src="/public/images/hero-banner.png"
+            width={656}
+            height={800}
+            alt="Koen De Groot"
+            className="w-full"
+          />
+        </div>
       </div>
 
       <AnimatedCounter />
