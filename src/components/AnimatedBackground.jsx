@@ -24,6 +24,11 @@ const AnimatedBackground = () => {
         <div className="shape circle small shape-9"></div>
         <div className="shape circle small shape-10"></div>
 
+        {/* Rectangular shapes */}
+        <div className="shape rectangle rect-1"></div>
+        <div className="shape rectangle rect-2"></div>
+        <div className="shape rectangle rect-3"></div>
+
         {/* Hexagonal shapes */}
         <div className="shape hexagon hex-1"></div>
         <div className="shape hexagon hex-2"></div>
