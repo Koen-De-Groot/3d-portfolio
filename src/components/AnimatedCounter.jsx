@@ -1,7 +1,7 @@
-import { useRef } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
 
 import { counterItems } from "../constants";
 
