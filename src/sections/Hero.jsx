@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+import AnimatedBackground from "../components/AnimatedBackground";
 import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import { words } from "../constants";
@@ -16,10 +17,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
-      </div>
-
+      <AnimatedBackground />
       <div className="hero-layout max-w-7xl mx-auto">
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
@@ -63,7 +61,7 @@ const Hero = () => {
 
         <div className="w-full max-w-[380px] ml-auto bg-gradient-to-t from-slate-400 via-25% via-slate-400/40 to-65% rounded-[60px] overflow-hidden">
           <img
-            src="/public/images/hero-banner.png"
+            src="/images/hero-banner.png"
             width={656}
             height={800}
             alt="Koen De Groot"
