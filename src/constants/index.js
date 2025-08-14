@@ -127,19 +127,16 @@ const expCards = [
   },
   {
     review:
-      "What started as an internship quickly turned into a full-time opportunity due to excellent performance and dedication. The team was impressed with the quality of work and problem-solving approach, leading to a job offer that launched my professional career.",
+      "What started as an internship quickly turned into a full-time opportunity due to my performance and dedication. The team was impressed with the quality of work and problem-solving approach, leading to a job offer that launched my professional career.",
     imgPath: "/images/vue.png",
     logoPath: "/images/vue.png",
     title: "Frontend Developer - Vue.js",
     date: "September 2022 - Present",
     responsibilities: [
-      "Successfully completed internship program with outstanding performance, earning a full-time job offer.",
       "Developed responsive and interactive user interfaces using Vue.js framework.",
       "Collaborated with design teams to implement pixel-perfect components and user experiences.",
-      "Optimized application performance and ensured cross-browser compatibility.",
       "Maintained and enhanced existing Vue.js applications with new features and improvements.",
       "Mastered Azure DevOps for project management, CI/CD pipelines, and team collaboration.",
-      "Gained expertise in Playwright for automated testing and end-to-end test development.",
     ],
   },
   {

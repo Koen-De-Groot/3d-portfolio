@@ -68,7 +68,7 @@ const AppShowcase = () => {
         rotationX: 0,
         duration: 1,
         ease: "power3.out",
-        stagger: 0.15,
+        stagger: 0.2,
         scrollTrigger: {
           trigger: gridContainerRef.current,
           start: "top bottom-=150",
