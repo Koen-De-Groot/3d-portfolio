@@ -40,6 +40,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
+              x: -20,
               rotation: 360,
               ease: "back.out(1.7)",
             },
@@ -54,7 +55,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: 20,
+              x: 40,
               ease: "bounce.out",
             },
             index * 0.1
@@ -68,6 +69,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
+              x: 20,
               rotation: -180,
               ease: "power2.out",
             },
@@ -82,7 +84,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: -15,
+              x: -35,
               ease: "elastic.out(1, 0.3)",
             },
             index * 0.1
@@ -98,6 +100,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
+              x: -25,
               rotation: 180,
               ease: "power3.out",
             },
@@ -112,7 +115,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: 10,
+              x: 25,
               ease: "back.out(2)",
             },
             index * 0.1
@@ -128,6 +131,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
+              x: -30,
               rotation: -90,
               ease: "power2.out",
             },
@@ -142,6 +146,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
+              x: -40,
               ease: "elastic.out(1, 0.5)",
             },
             index * 0.1
@@ -155,7 +160,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: -20,
+              x: -45,
               ease: "bounce.out",
             },
             index * 0.1
@@ -183,7 +188,7 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: 15,
+              x: 30,
               ease: "power2.out",
             },
             index * 0.1
@@ -199,7 +204,7 @@ const AnimatedName = ({ className }) => {
     tl.to(
       letterElements,
       {
-        duration: 0.5,
+        duration: 0.8,
         x: 0,
         rotation: 0,
         ease: "power2.inOut",
