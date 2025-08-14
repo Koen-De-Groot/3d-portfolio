@@ -90,7 +90,7 @@ const AppShowcase = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="image-wrapper bg-[#201e1e]">
+                <div className="image-wrapper bg-[#1a1818]">
                   <img src="/images/e-commerce.png" alt="Audiophile App" />
                 </div>
                 <h2>Audiophile - E-commerce App (Vue)</h2>
@@ -102,7 +102,7 @@ const AppShowcase = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="image-wrapper bg-[#ffffff]">
+                <div className="image-wrapper bg-[#1a1818]">
                   <img
                     src="/images/resume.png"
                     alt="AI Powered Resume Builder"
@@ -120,7 +120,7 @@ const AppShowcase = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="image-wrapper bg-[#ffffff]">
+              <div className="image-wrapper bg-[#ffffff] p-0">
                 <img src="/images/kanban.png" alt="Kanban App" />
               </div>
               <h2>Kanban App (Vue)</h2>
