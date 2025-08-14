@@ -7,12 +7,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AppShowcase = () => {
   const sectionRef = useRef(null);
-  const bubuRef = useRef(null);
-  const resumeRef = useRef(null);
+  const heroProjectRef = useRef(null);
+  const gridContainerRef = useRef(null);
   const audiophileRef = useRef(null);
+  const resumeRef = useRef(null);
   const kanbanRef = useRef(null);
   const movieRef = useRef(null);
   const feedbackRef = useRef(null);
+
   useGSAP(() => {
     // Animation for the main section
     gsap.fromTo(
@@ -21,130 +23,288 @@ const AppShowcase = () => {
       { opacity: 1, duration: 1.5 }
     );
 
-    // Animations for each app showcase
-    const cards = [
-      bubuRef.current,
-      resumeRef.current,
+    // Hero project animation
+    gsap.fromTo(
+      heroProjectRef.current,
+      {
+        y: 80,
+        opacity: 0,
+        scale: 0.9,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: heroProjectRef.current,
+          start: "top bottom-=200",
+        },
+      }
+    );
+
+    // Grid projects staggered animation
+    const gridProjects = [
       audiophileRef.current,
+      resumeRef.current,
       kanbanRef.current,
       movieRef.current,
       feedbackRef.current,
     ];
 
-    cards.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        {
-          y: 50,
-          opacity: 0,
+    gsap.fromTo(
+      gridProjects,
+      {
+        y: 100,
+        opacity: 0,
+        scale: 0.8,
+        rotationX: 45,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        rotationX: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: gridContainerRef.current,
+          start: "top bottom-=150",
         },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          delay: 0.1 * (index + 0.5),
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=300",
-          },
-        }
-      );
-    });
+      }
+    );
   }, []);
 
   return (
     <div id="work" ref={sectionRef} className="app-showcase">
-      <div className="w-full">
-        <div className="showcaselayout">
-          <div ref={bubuRef} className="first-project-wrapper">
-            <a
-              href="https://www.bubuaimealplanner.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="image-wrapper">
-                <img src="/images/bubu1.png" alt="bubu ai" />
+      <div className="w-full max-w-7xl mx-auto px-4">
+        {/* Hero Project - Full Width */}
+        <div
+          ref={heroProjectRef}
+          className="hero-project-container relative mb-20 group"
+          style={{
+            perspective: "1000px",
+          }}
+        >
+          <a
+            href="https://www.bubuaimealplanner.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <div className="relative overflow-hidden rounded-2xl  backdrop-blur-sm transition-all duration-500">
+              {/* Animated background gradient */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              {/* Content wrapper */}
+              <div className="relative grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
+                {/* Text content */}
+                <div className="flex flex-col justify-center space-y-6 lg:order-1">
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium">
+                      Flagship Project
+                    </div>
+                    <h2 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent leading-tight">
+                      AI Recipe Generator
+                    </h2>
+                    <p className="text-lg text-gray-300 leading-relaxed">
+                      Production-grade AI meal planner using state-of-the-art
+                      models and tools.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <p className="text-gray-400">Built with:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "Next.js",
+                        "Convex",
+                        "Clerk",
+                        "TypeScript",
+                        "Shadcn",
+                        "React Query",
+                        "OpenRouter",
+                        "Vercel",
+                        "TailwindCSS",
+                      ].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-white/5 rounded-full text-sm text-gray-300 border border-white/10"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="lg:order-2">
+                  <div className="relative group/img">
+                    <div className="absolute inset-0  rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                    <img
+                      src="/images/bubu1.png"
+                      alt="Bubu AI Meal Planner"
+                      className="relative w-full h-auto rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="text-content">
-                <h2 className="mt-3">
-                  Personal Flagship Project: Production Grade AI Recipe
-                  Generator Using All The State Of The Art AI Models And Tools
-                </h2>
-                <p className="text-white-50 md:text-xl">
-                  Built with Nextjs, Convex, Clerk for Auth and Billing,
-                  Typescript, Shadcn, React Query, OpenRouter, Vercel &
-                  TailwindCSS for a super fast, user-friendly experience.
-                </p>
-              </div>
-            </a>
+            </div>
+          </a>
+        </div>
+
+        {/* Other Projects Grid */}
+        <div ref={gridContainerRef} className="space-y-8">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+              Other Featured Projects
+            </h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              A collection of applications built with various technologies
+            </p>
           </div>
 
-          <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={audiophileRef}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Audiophile */}
+            <div
+              ref={audiophileRef}
+              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
+            >
               <a
                 href="https://audiophilekdg.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="block"
               >
-                <div className="image-wrapper bg-[#1a1818]">
-                  <img src="/images/e-commerce.png" alt="Audiophile App" />
+                <div className="aspect-video overflow-hidden bg-[#1a1818]">
+                  <img
+                    src="/images/e-commerce.png"
+                    alt="Audiophile App"
+                    className="w-full h-full object-cover transition-transform duration-500"
+                  />
                 </div>
-                <h2 className="mt-3">Audiophile - E-commerce App (Vue)</h2>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
+                    Audiophile E-commerce
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-3">Vue.js</p>
+                </div>
               </a>
             </div>
-            <div className="project" ref={resumeRef}>
+
+            {/* Resume Builder */}
+            <div
+              ref={resumeRef}
+              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
+              style={{ transformStyle: "preserve-3d" }}
+            >
               <a
                 href="https://nextjs-15-ai-resume-builder-tan.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="block"
               >
-                <div className="image-wrapper bg-[#1a1818]">
+                <div className="aspect-video overflow-hidden bg-[#1a1818]">
                   <img
                     src="/images/resume.png"
-                    alt="AI Powered Resume Builder"
+                    alt="AI Resume Builder"
+                    className="w-full h-full object-cover transition-transform duration-500"
                   />
                 </div>
-                <h2 className="mt-3">AI Powered Resume Builder (Nextjs)</h2>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
+                    AI Resume Builder
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-3">Next.js</p>
+                </div>
               </a>
             </div>
-          </div>
-        </div>
-        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 mt-20">
-          <div className="extra-projects" ref={kanbanRef}>
-            <a
-              href="https://vuekanbanapp.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
+
+            {/* Kanban */}
+            <div
+              ref={kanbanRef}
+              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
+              style={{ transformStyle: "preserve-3d" }}
             >
-              <div className="image-wrapper bg-[#ffffff] p-0">
-                <img src="/images/kanban.png" alt="Kanban App" />
-              </div>
-              <h2 className="mt-3">Kanban App (Vue)</h2>
-            </a>
-          </div>
-          <div className="extra-projects" ref={movieRef}>
-            <a
-              href="https://entertainmentwebapp.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
+              <a
+                href="https://vuekanbanapp.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="aspect-video overflow-hidden bg-white">
+                  <img
+                    src="/images/kanban.png"
+                    alt="Kanban App"
+                    className="w-full h-full object-cover transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
+                    Kanban Board
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-3">Vue.js</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Movie App */}
+            <div
+              ref={movieRef}
+              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
+              style={{ transformStyle: "preserve-3d" }}
             >
-              <div className="image-wrapper bg-[#ffffff] p-0">
-                <img src="/images/movie.png" alt="Movie App" />
-              </div>
-              <h2 className="mt-3">Entertainment Web App (Blazor)</h2>
-            </a>
-          </div>
-          <div className="extra-projects" ref={feedbackRef}>
-            <a
-              href="https://angularproductfeedbackapp.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
+              <a
+                href="https://entertainmentwebapp.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="aspect-video overflow-hidden bg-white">
+                  <img
+                    src="/images/movie.png"
+                    alt="Entertainment App"
+                    className="w-full h-full object-cover transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
+                    Entertainment Web App
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-3">Blazor</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Feedback App */}
+            <div
+              ref={feedbackRef}
+              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 md:col-span-2 lg:col-span-1"
+              style={{ transformStyle: "preserve-3d" }}
             >
-              <div className="image-wrapper bg-[#ffffff] p-0">
-                <img src="/images/feedback.png" alt="Movie App" />
-              </div>
-              <h2 className="mt-3">Product Feedback App (Angular)</h2>
-            </a>
+              <a
+                href="https://angularproductfeedbackapp.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="aspect-video overflow-hidden bg-white">
+                  <img
+                    src="/images/feedback.png"
+                    alt="Feedback App"
+                    className="w-full h-full object-cover transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
+                    Product Feedback App
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-3">Angular</p>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
