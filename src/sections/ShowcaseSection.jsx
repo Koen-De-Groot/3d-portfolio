@@ -99,7 +99,7 @@ const AppShowcase = () => {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               {/* Content wrapper */}
-              <div className="relative grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
+              <div className="relative grid lg:grid-cols-2 gap-8 lg:p-12">
                 {/* Text content */}
                 <div className="flex flex-col justify-center space-y-6 lg:order-1">
                   <div className="space-y-4">
@@ -142,7 +142,7 @@ const AppShowcase = () => {
                 {/* Image */}
                 <div className="lg:order-2">
                   <div className="relative group/img">
-                    <div className="absolute inset-0  rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                    <div className="absolute inset-0 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                     <img
                       src="/images/bubu1.png"
                       alt="Bubu AI Meal Planner"
@@ -170,7 +170,7 @@ const AppShowcase = () => {
             {/* Audiophile */}
             <div
               ref={audiophileRef}
-              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
+              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
             >
               <a
                 href="https://audiophilekdg.netlify.app/"
@@ -182,7 +182,7 @@ const AppShowcase = () => {
                   <img
                     src="/images/e-commerce.png"
                     alt="Audiophile App"
-                    className="w-full h-full object-cover transition-transform duration-500"
+                    className="w-full h-full object-contain transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
@@ -197,8 +197,7 @@ const AppShowcase = () => {
             {/* Resume Builder */}
             <div
               ref={resumeRef}
-              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
-              style={{ transformStyle: "preserve-3d" }}
+              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
             >
               <a
                 href="https://nextjs-15-ai-resume-builder-tan.vercel.app"
@@ -225,8 +224,7 @@ const AppShowcase = () => {
             {/* Kanban */}
             <div
               ref={kanbanRef}
-              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
-              style={{ transformStyle: "preserve-3d" }}
+              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
             >
               <a
                 href="https://vuekanbanapp.netlify.app"
@@ -253,8 +251,7 @@ const AppShowcase = () => {
             {/* Movie App */}
             <div
               ref={movieRef}
-              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
-              style={{ transformStyle: "preserve-3d" }}
+              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
             >
               <a
                 href="https://entertainmentwebapp.netlify.app"
@@ -281,8 +278,7 @@ const AppShowcase = () => {
             {/* Feedback App */}
             <div
               ref={feedbackRef}
-              className="project-card group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 md:col-span-2 lg:col-span-1"
-              style={{ transformStyle: "preserve-3d" }}
+              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 md:col-span-2 lg:col-span-1"
             >
               <a
                 href="https://angularproductfeedbackapp.netlify.app"
