@@ -3,8 +3,6 @@ import { useEffect, useRef } from "react";
 
 const AnimatedName = ({ className }) => {
   const nameRef = useRef(null);
-  const firstORef = useRef(null);
-  const secondORef = useRef(null);
 
   const name = "Koen De Groot";
   const letters = name.split("");
@@ -15,13 +13,21 @@ const AnimatedName = ({ className }) => {
     const letterElements = nameRef.current.querySelectorAll(".letter");
     const tl = gsap.timeline();
 
-    // Initial setup - hide all letters
-    gsap.set(letterElements, {
-      opacity: 0,
-      y: 50,
-      x: 0,
-      rotation: 0,
-      scale: 0.5,
+    // Initial setup - position letters at varying heights above to fall down
+    letterElements.forEach((letter) => {
+      const isSpace = letter.textContent === " ";
+      if (isSpace) return;
+
+      // Vary initial height for more natural falling effect
+      const initialHeight = -120 - Math.random() * 60; // Random height between -120 and -180
+
+      gsap.set(letter, {
+        opacity: 0,
+        y: initialHeight,
+        x: 0,
+        rotation: Math.random() * 360, // Random initial rotation
+        scale: 0.8,
+      });
     });
 
     // Animate each letter with different effects
@@ -29,9 +35,9 @@ const AnimatedName = ({ className }) => {
       const isSpace = letter.textContent === " ";
       if (isSpace) return;
 
-      // Different animation types for each letter
+      // Different falling animation types for each letter
       const animations = [
-        // K
+        // K - tumbling fall with rotation
         () =>
           tl.to(
             letter,
@@ -40,13 +46,12 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: -20,
-              rotation: 360,
-              ease: "back.out(1.7)",
+              rotation: 720,
+              ease: "bounce.out",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
           ),
-        // o (first)
+        // o (first) - gentle bouncing fall
         () =>
           tl.to(
             letter,
@@ -55,12 +60,12 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: 40,
-              ease: "bounce.out",
+              rotation: 360,
+              ease: "power2.out",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
           ),
-        // e
+        // e - spinning fall
         () =>
           tl.to(
             letter,
@@ -69,13 +74,12 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: 20,
-              rotation: -180,
-              ease: "power2.out",
+              rotation: -540,
+              ease: "bounce.out",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
           ),
-        // n
+        // n - wobbling fall
         () =>
           tl.to(
             letter,
@@ -84,14 +88,14 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: -35,
-              ease: "elastic.out(1, 0.3)",
+              rotation: 180,
+              ease: "elastic.out(1, 0.6)",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
           ),
         // space
         null,
-        // D
+        // D - heavy fall with slight bounce
         () =>
           tl.to(
             letter,
@@ -100,29 +104,12 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: -25,
-              rotation: 180,
+              rotation: 450,
               ease: "power3.out",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
           ),
-        // e
-        () =>
-          tl.to(
-            letter,
-            {
-              duration: 0.6,
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              x: 25,
-              ease: "back.out(2)",
-            },
-            index * 0.1
-          ),
-        // space
-        null,
-        // G
+        // e - light tumbling fall
         () =>
           tl.to(
             letter,
@@ -131,41 +118,14 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: -30,
-              rotation: -90,
-              ease: "power2.out",
+              rotation: -360,
+              ease: "back.out(1.2)",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
           ),
-        // r
-        () =>
-          tl.to(
-            letter,
-            {
-              duration: 0.8,
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              x: -40,
-              ease: "elastic.out(1, 0.5)",
-            },
-            index * 0.1
-          ),
-        // o (second)
-        () =>
-          tl.to(
-            letter,
-            {
-              duration: 0.5,
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              x: -45,
-              ease: "bounce.out",
-            },
-            index * 0.1
-          ),
-        // o (third)
+        // space
+        null,
+        // G - dramatic spinning fall
         () =>
           tl.to(
             letter,
@@ -174,12 +134,12 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              rotation: 270,
-              ease: "back.out(1.5)",
+              rotation: -720,
+              ease: "bounce.out",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
           ),
-        // t
+        // r - quick fall with multiple spins
         () =>
           tl.to(
             letter,
@@ -188,10 +148,52 @@ const AnimatedName = ({ className }) => {
               opacity: 1,
               y: 0,
               scale: 1,
-              x: 30,
+              rotation: 900,
               ease: "power2.out",
             },
-            index * 0.1
+            index * 0.1 + Math.random() * 0.1
+          ),
+        // o (second) - bouncing fall
+        () =>
+          tl.to(
+            letter,
+            {
+              duration: 0.6,
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotation: 540,
+              ease: "bounce.out",
+            },
+            index * 0.1 + Math.random() * 0.1
+          ),
+        // o (third) - gentle tumbling fall
+        () =>
+          tl.to(
+            letter,
+            {
+              duration: 0.4,
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotation: 270,
+              ease: "power2.out",
+            },
+            index * 0.1 + Math.random() * 0.1
+          ),
+        // t - final letter with dramatic fall
+        () =>
+          tl.to(
+            letter,
+            {
+              duration: 0.7,
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              rotation: -450,
+              ease: "elastic.out(1, 0.4)",
+            },
+            index * 0.1 + Math.random() * 0.1
           ),
       ];
 
@@ -200,87 +202,24 @@ const AnimatedName = ({ className }) => {
       }
     });
 
-    // Reset positions after initial animation
+    // Gentle rotation reset after falling animation
     tl.to(
       letterElements,
       {
         duration: 0.8,
-        x: 0,
         rotation: 0,
         ease: "power2.inOut",
       },
-      "+=0.5"
+      "+=0.4"
     );
-
-    // Set up the "o" swapping animation
-    const setupOSwapping = () => {
-      const firstO = firstORef.current;
-      const secondO = secondORef.current;
-
-      if (firstO && secondO) {
-        // Calculate the distance between the two o's
-        const firstORect = firstO.getBoundingClientRect();
-        const secondORect = secondO.getBoundingClientRect();
-        const distance = secondORect.left - firstORect.left;
-
-        gsap
-          .timeline({ repeat: -1, repeatDelay: 2 })
-          // First 'o' jumps high over the second 'o'
-          .to(firstO, {
-            duration: 0.3,
-            y: -20,
-            x: distance / 2,
-            rotation: 180,
-            ease: "power2.out",
-          })
-          .to(firstO, {
-            duration: 0.3,
-            y: 0,
-            x: distance,
-            rotation: 360,
-            ease: "power2.in",
-          })
-          // Second 'o' jumps lower under the first 'o'
-          .to(
-            secondO,
-            {
-              duration: 0.3,
-              y: 10,
-              x: -distance / 2,
-              rotation: -180,
-              ease: "power2.out",
-            },
-            0
-          )
-          .to(
-            secondO,
-            {
-              duration: 0.3,
-              y: 0,
-              x: -distance,
-              rotation: -360,
-              ease: "power2.in",
-            },
-            0.3
-          )
-          .set({}, {}, "+=2"); // 3 second delay before next swap
-      }
-    };
-
-    // Start o swapping after initial animation completes
-    tl.call(setupOSwapping, null, "+=1");
   }, []);
 
   return (
     <span ref={nameRef} className={className}>
       {letters.map((letter, index) => {
-        const isFirstO = letter === "o" && index === 10; // First 'o' in "Groot"
-        const isSecondO = letter === "o" && index === 11; // Second 'o' in "Groot"
-
         return (
           <span
             key={index}
-            ref={isFirstO ? firstORef : isSecondO ? secondORef : null}
             className={`letter inline-block ${letter === " " ? "w-2" : ""}`}
             style={{
               display: letter === " " ? "inline-block" : "inline-block",

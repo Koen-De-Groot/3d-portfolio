@@ -141,15 +141,19 @@ const expCards = [
   },
   {
     review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+      "Over the years, I've completely fallen in love with web development and dedicated my free time to exploring the latest technologies. My passion drives me to continuously learn and experiment with cutting-edge frameworks and AI integration, creating innovative side projects that push the boundaries of what's possible.",
+    imgPath: "/images/react.png",
+    logoPath: "/images/react.png",
+    title: "Passionate Web Developer - Side Projects",
+    date: "Present - Future",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Mastered modern frontend technologies including React, Next.js, Vite, and TypeScript for building scalable applications.",
+      "Developed expertise in styling with Tailwind CSS and component libraries like shadcn/ui for consistent design systems.",
+      "Built full-stack applications using database solutions like Prisma and Drizzle with modern deployment platforms like Vercel and Netlify.",
+      "Integrated AI technologies through OpenRouter and various AI providers to create intelligent web applications.",
+      "Implemented state management and data fetching with TanStack Query and real-time capabilities with Convex.",
+      "Created engaging user experiences with advanced animations using GSAP and modern web APIs.",
+      "Continuously learning and applying new technologies through hands-on project development and experimentation.",
     ],
   },
 ];

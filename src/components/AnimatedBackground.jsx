@@ -6,20 +6,16 @@ const AnimatedBackground = () => {
       {/* Background gradient */}
       <div className="animated-gradient"></div>
 
-      {/* Floating geometric shapes */}
       <div className="floating-shapes">
-        {/* Large circles */}
         <div className="shape circle large shape-1"></div>
         <div className="shape circle large shape-2"></div>
         <div className="shape circle large shape-3"></div>
 
-        {/* Small circles */}
         <div className="shape circle small shape-7"></div>
         <div className="shape circle small shape-8"></div>
         <div className="shape circle small shape-9"></div>
         <div className="shape circle small shape-10"></div>
 
-        {/* Hexagonal shapes */}
         <div className="shape hexagon hex-1"></div>
         <div className="shape hexagon hex-2"></div>
       </div>
