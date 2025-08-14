@@ -66,13 +66,9 @@ const AppShowcase = () => {
                 <img src="/images/bubu1.png" alt="bubu ai" />
               </div>
               <div className="text-content">
-                <h2 className="relative">
-                  <span className="relative">
-                    LIVE
-                    <span className="absolute top-2 -right-3 w-2 h-2 bg-red-500 rounded-full"></span>
-                  </span>
-                  : Production Grade AI Recipe Generator Using All The State Of
-                  The Art AI Models And Tools
+                <h2 className="mt-3">
+                  Personal Flagship Project: Production Grade AI Recipe
+                  Generator Using All The State Of The Art AI Models And Tools
                 </h2>
                 <p className="text-white-50 md:text-xl">
                   Built with Nextjs, Convex, Clerk for Auth and Billing,
@@ -93,7 +89,7 @@ const AppShowcase = () => {
                 <div className="image-wrapper bg-[#1a1818]">
                   <img src="/images/e-commerce.png" alt="Audiophile App" />
                 </div>
-                <h2>Audiophile - E-commerce App (Vue)</h2>
+                <h2 className="mt-3">Audiophile - E-commerce App (Vue)</h2>
               </a>
             </div>
             <div className="project" ref={resumeRef}>
@@ -108,7 +104,7 @@ const AppShowcase = () => {
                     alt="AI Powered Resume Builder"
                   />
                 </div>
-                <h2>AI Powered Resume Builder (Nextjs)</h2>
+                <h2 className="mt-3">AI Powered Resume Builder (Nextjs)</h2>
               </a>
             </div>
           </div>
@@ -123,7 +119,7 @@ const AppShowcase = () => {
               <div className="image-wrapper bg-[#ffffff] p-0">
                 <img src="/images/kanban.png" alt="Kanban App" />
               </div>
-              <h2>Kanban App (Vue)</h2>
+              <h2 className="mt-3">Kanban App (Vue)</h2>
             </a>
           </div>
           <div className="extra-projects" ref={movieRef}>
@@ -135,7 +131,7 @@ const AppShowcase = () => {
               <div className="image-wrapper bg-[#ffffff] p-0">
                 <img src="/images/movie.png" alt="Movie App" />
               </div>
-              <h2>Entertainment Web App (Blazor)</h2>
+              <h2 className="mt-3">Entertainment Web App (Blazor)</h2>
             </a>
           </div>
           <div className="extra-projects" ref={feedbackRef}>
@@ -147,7 +143,7 @@ const AppShowcase = () => {
               <div className="image-wrapper bg-[#ffffff] p-0">
                 <img src="/images/feedback.png" alt="Movie App" />
               </div>
-              <h2>Product Feedback App (Angular)</h2>
+              <h2 className="mt-3">Product Feedback App (Angular)</h2>
             </a>
           </div>
         </div>
