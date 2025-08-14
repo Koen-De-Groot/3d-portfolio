@@ -112,28 +112,31 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+      "Starting my programming journey in college, I pursued a comprehensive Software Developer degree with dedication and passion. My academic excellence was recognized with magna cum laude honors, reflecting my commitment to mastering the fundamentals of software development.",
+    imgPath: "/images/csharp.png",
+    logoPath: "/images/csharp.png",
+    title: "Software Developer Degree - Magna Cum Laude",
+    date: "College Education",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Mastered C# programming language for object-oriented development and desktop applications.",
+      "Learned SQL database design, queries, and data management principles.",
+      "Built proficiency in web technologies including HTML, CSS, and JavaScript for frontend development.",
+      "Gained expertise in REST APIs for building scalable web services and integrations.",
     ],
   },
   {
     review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+      "What started as an internship quickly turned into a full-time opportunity due to excellent performance and dedication. The team was impressed with the quality of work and problem-solving approach, leading to a job offer that launched my professional career.",
+    imgPath: "/images/vue.png",
+    logoPath: "/images/vue.png",
+    title: "Frontend Developer - Vue.js",
+    date: "September 2022 - Present",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Successfully completed internship program with outstanding performance, earning a full-time job offer.",
+      "Developed responsive and interactive user interfaces using Vue.js framework.",
+      "Collaborated with design teams to implement pixel-perfect components and user experiences.",
+      "Optimized application performance and ensured cross-browser compatibility.",
+      "Maintained and enhanced existing Vue.js applications with new features and improvements.",
     ],
   },
   {
