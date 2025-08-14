@@ -122,6 +122,7 @@ const expCards = [
       "Learned SQL database design, queries, and data management principles.",
       "Built proficiency in web technologies including HTML, CSS, and JavaScript for frontend development.",
       "Gained expertise in REST APIs for building scalable web services and integrations.",
+      "Learned Git and GitHub for version control, collaboration, and code management best practices.",
     ],
   },
   {
@@ -137,6 +138,8 @@ const expCards = [
       "Collaborated with design teams to implement pixel-perfect components and user experiences.",
       "Optimized application performance and ensured cross-browser compatibility.",
       "Maintained and enhanced existing Vue.js applications with new features and improvements.",
+      "Mastered Azure DevOps for project management, CI/CD pipelines, and team collaboration.",
+      "Gained expertise in Playwright for automated testing and end-to-end test development.",
     ],
   },
   {
