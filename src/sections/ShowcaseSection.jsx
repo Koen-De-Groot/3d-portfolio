@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../constants";
 
@@ -12,6 +12,7 @@ const AppShowcase = () => {
   const heroProjectRef = useRef(null);
   const gridContainerRef = useRef(null);
   const projectRefs = useRef([]);
+  const [hovered, setHovered] = useState(null);
 
   useGSAP(() => {
     // Animation for the main section
@@ -185,6 +186,9 @@ const AppShowcase = () => {
                   bgColor={bgColor}
                   objectFit={objectFit}
                   className={className}
+                  index={index}
+                  hovered={hovered}
+                  setHovered={setHovered}
                 />
               )
             )}
