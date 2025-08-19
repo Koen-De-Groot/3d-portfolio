@@ -85,4 +85,58 @@ const expCards = [
   },
 ];
 
-export { counterItems, expCards, navLinks, words };
+const projects = [
+  {
+    id: "audiophile",
+    href: "https://audiophilekdg.netlify.app/",
+    image: "/images/e-commerce.png",
+    alt: "Audiophile App",
+    title: "Audiophile E-commerce",
+    technology: "Vue.js",
+    bgColor: "bg-[#1a1818]",
+    objectFit: "object-contain",
+  },
+  {
+    id: "resume",
+    href: "https://nextjs-15-ai-resume-builder-tan.vercel.app",
+    image: "/images/resume.png",
+    alt: "AI Resume Builder",
+    title: "AI Resume Builder",
+    technology: "Next.js",
+    bgColor: "bg-[#1a1818]",
+    objectFit: "object-cover",
+  },
+  {
+    id: "kanban",
+    href: "https://vuekanbanapp.netlify.app",
+    image: "/images/kanban.png",
+    alt: "Kanban App",
+    title: "Kanban Board",
+    technology: "Vue.js",
+    bgColor: "bg-white",
+    objectFit: "object-cover",
+  },
+  {
+    id: "movie",
+    href: "https://entertainmentwebapp.netlify.app",
+    image: "/images/movie.png",
+    alt: "Entertainment App",
+    title: "Entertainment Web App",
+    technology: "Blazor",
+    bgColor: "bg-white",
+    objectFit: "object-cover",
+  },
+  {
+    id: "feedback",
+    href: "https://angularproductfeedbackapp.netlify.app",
+    image: "/images/feedback.png",
+    alt: "Feedback App",
+    title: "Product Feedback App",
+    technology: "Angular",
+    bgColor: "bg-white",
+    objectFit: "object-cover",
+    className: "md:col-span-2 lg:col-span-1",
+  },
+];
+
+export { counterItems, expCards, navLinks, projects, words };

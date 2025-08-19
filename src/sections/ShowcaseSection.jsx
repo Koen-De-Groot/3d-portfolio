@@ -2,6 +2,8 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,11 +11,7 @@ const AppShowcase = () => {
   const sectionRef = useRef(null);
   const heroProjectRef = useRef(null);
   const gridContainerRef = useRef(null);
-  const audiophileRef = useRef(null);
-  const resumeRef = useRef(null);
-  const kanbanRef = useRef(null);
-  const movieRef = useRef(null);
-  const feedbackRef = useRef(null);
+  const projectRefs = useRef([]);
 
   useGSAP(() => {
     // Animation for the main section
@@ -45,13 +43,7 @@ const AppShowcase = () => {
     );
 
     // Grid projects staggered animation
-    const gridProjects = [
-      audiophileRef.current,
-      resumeRef.current,
-      kanbanRef.current,
-      movieRef.current,
-      feedbackRef.current,
-    ];
+    const gridProjects = projectRefs.current.filter(Boolean);
 
     gsap.fromTo(
       gridProjects,
@@ -167,140 +159,35 @@ const AppShowcase = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Audiophile */}
-            <div
-              ref={audiophileRef}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
-            >
-              <a
-                href="https://audiophilekdg.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="aspect-video overflow-hidden bg-[#1a1818]">
-                  <img
-                    src="/images/e-commerce.png"
-                    alt="Audiophile App"
-                    className="w-full h-full object-contain transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
-                    Audiophile E-commerce
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-3">Vue.js</p>
-                </div>
-              </a>
-            </div>
-
-            {/* Resume Builder */}
-            <div
-              ref={resumeRef}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
-            >
-              <a
-                href="https://nextjs-15-ai-resume-builder-tan.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="aspect-video overflow-hidden bg-[#1a1818]">
-                  <img
-                    src="/images/resume.png"
-                    alt="AI Resume Builder"
-                    className="w-full h-full object-cover transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
-                    AI Resume Builder
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-3">Next.js</p>
-                </div>
-              </a>
-            </div>
-
-            {/* Kanban */}
-            <div
-              ref={kanbanRef}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
-            >
-              <a
-                href="https://vuekanbanapp.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="aspect-video overflow-hidden bg-white">
-                  <img
-                    src="/images/kanban.png"
-                    alt="Kanban App"
-                    className="w-full h-full object-cover transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
-                    Kanban Board
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-3">Vue.js</p>
-                </div>
-              </a>
-            </div>
-
-            {/* Movie App */}
-            <div
-              ref={movieRef}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300"
-            >
-              <a
-                href="https://entertainmentwebapp.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="aspect-video overflow-hidden bg-white">
-                  <img
-                    src="/images/movie.png"
-                    alt="Entertainment App"
-                    className="w-full h-full object-cover transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
-                    Entertainment Web App
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-3">Blazor</p>
-                </div>
-              </a>
-            </div>
-
-            {/* Feedback App */}
-            <div
-              ref={feedbackRef}
-              className="group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 md:col-span-2 lg:col-span-1"
-            >
-              <a
-                href="https://angularproductfeedbackapp.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <div className="aspect-video overflow-hidden bg-white">
-                  <img
-                    src="/images/feedback.png"
-                    alt="Feedback App"
-                    className="w-full h-full object-cover transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2 transition-colors">
-                    Product Feedback App
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-3">Angular</p>
-                </div>
-              </a>
-            </div>
+            {projects.map(
+              (
+                {
+                  id,
+                  href,
+                  image,
+                  alt,
+                  title,
+                  technology,
+                  bgColor,
+                  objectFit,
+                  className,
+                },
+                index
+              ) => (
+                <ProjectCard
+                  key={id}
+                  ref={(el) => (projectRefs.current[index] = el)}
+                  href={href}
+                  image={image}
+                  alt={alt}
+                  title={title}
+                  technology={technology}
+                  bgColor={bgColor}
+                  objectFit={objectFit}
+                  className={className}
+                />
+              )
+            )}
           </div>
         </div>
       </div>
