@@ -2,7 +2,7 @@ import MagicButton from "../components/MagicButton";
 
 const Footer = () => {
   return (
-    <footer className="w-fullrelative" id="contact">
+    <footer className="w-full px-5" id="contact">
       <div className="flex flex-col items-center">
         <h1 className="font-bold text-4xl md:text-5xl text-center lg:max-w-[45vw]">
           Ready to take <span>your</span> digital presence to the next level?
