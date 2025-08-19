@@ -67,13 +67,7 @@ const Approach = () => {
 
 export default Approach;
 
-const Card = ({
-  title,
-  icon,
-  children,
-  // add this one for the desc
-  des,
-}) => {
+const Card = ({ title, icon, children, des }) => {
   const [hovered, setHovered] = useState(false);
   return (
     <div
