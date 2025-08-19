@@ -24,8 +24,8 @@ const ProjectCard = forwardRef(
         onMouseEnter={() => setHovered?.(index)}
         onMouseLeave={() => setHovered?.(null)}
         className={cn(
-          "group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-300 ease-out",
-          hovered !== null && hovered !== index && "blur-sm scale-[0.98]",
+          "group relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden transition-all duration-200 ease-out",
+          hovered !== null && hovered !== index && "blur-sm",
           className
         )}
       >
