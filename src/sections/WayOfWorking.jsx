@@ -5,7 +5,7 @@ import CanvasRevealEffect from "../components/CanvasRevealEffect";
 
 const Approach = () => {
   return (
-    <section className="max-w-7xl mx-auto py-20 mt-10">
+    <section id="approach" className="max-w-7xl mx-auto py-20 mt-10">
       <h1 className="font-bold text-4xl md:text-5xl text-center">
         My approach
       </h1>
