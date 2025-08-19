@@ -76,6 +76,7 @@ const expCards = [
       "Mastered modern frontend technologies including React, Next.js, Vite, and TypeScript for building scalable applications.",
       "Developed expertise in styling with Tailwind CSS and component libraries like shadcn/ui for consistent design systems.",
       "Built full-stack applications using database solutions like Prisma and Drizzle with modern deployment platforms like Vercel and Netlify.",
+      "Created numerous Frontend Mentor projects, recreating pixel-perfect designs into responsive, interactive code.",
       "Integrated AI technologies through OpenRouter and various AI providers to create intelligent web applications.",
       "Implemented state management and data fetching with TanStack Query and real-time capabilities with Convex.",
       "Created engaging user experiences with advanced animations using GSAP and modern web APIs.",
