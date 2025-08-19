@@ -5,9 +5,9 @@ import CanvasRevealEffect from "../components/CanvasRevealEffect";
 
 const Approach = () => {
   return (
-    <section className="max-w-7xl mx-auto py-20">
+    <section className="max-w-7xl mx-auto py-20 mt-10">
       <h1 className="font-bold text-4xl md:text-5xl text-center">
-        My <span className="text-purple">approach</span>
+        My approach
       </h1>
       {/* remove bg-white dark:bg-black */}
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
@@ -157,7 +157,7 @@ const AceternityIcon = ({ order }) => {
         />
         <span
           className="inline-flex h-full w-full cursor-pointer items-center 
-        justify-center rounded-full bg-slate-950 px-5 py-2 text-purple backdrop-blur-3xl font-bold text-2xl"
+        justify-center rounded-full bg-slate-950 px-5 py-2 backdrop-blur-3xl font-bold text-2xl"
         >
           {order}
         </span>
