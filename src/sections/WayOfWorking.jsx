@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import CanvasRevealEffect from "../components/CanvasRevealEffect";
 
 const Approach = () => {
@@ -74,7 +74,7 @@ const Card = ({
   // add this one for the desc
   des,
 }) => {
-  const [hovered, setHovered] = React.useState(false);
+  const [hovered, setHovered] = useState(false);
   return (
     <div
       onMouseEnter={() => setHovered(true)}
