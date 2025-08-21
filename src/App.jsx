@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/NavBar";
 import Experience from "./sections/Experience";
 import Footer from "./sections/Footer";
@@ -13,6 +14,7 @@ const App = () => (
     <Experience />
     <WayOfWorking />
     <Footer />
+    <Analytics />
   </>
 );
 
