@@ -83,6 +83,16 @@ const expCards = [
 
 const projects = [
   {
+    id: "3d-showcase",
+    href: "https://fizzi-youtube-koen.vercel.app/",
+    image: "/images/fizzi.png",
+    alt: "Fizzi Youtube",
+    title: "3D Showcase",
+    technology: "Next.js",
+    bgColor: "bg-[#1a1818]",
+    objectFit: "object-contain",
+  },
+  {
     id: "audiophile",
     href: "https://audiophilekdg.netlify.app/",
     image: "/images/e-commerce.png",
@@ -97,7 +107,7 @@ const projects = [
     href: "https://nextjs-15-ai-resume-builder-tan.vercel.app",
     image: "/images/resume.png",
     alt: "AI Resume Builder",
-    title: "AI Resume Builder",
+    title: "",
     technology: "Next.js",
     bgColor: "bg-[#1a1818]",
     objectFit: "object-cover",
