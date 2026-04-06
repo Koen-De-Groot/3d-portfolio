@@ -103,16 +103,6 @@ const projects = [
     objectFit: "object-contain",
   },
   {
-    id: "resume",
-    href: "https://nextjs-15-ai-resume-builder-tan.vercel.app",
-    image: "/images/resume.png",
-    alt: "AI Resume Builder",
-    title: "",
-    technology: "Next.js",
-    bgColor: "bg-[#1a1818]",
-    objectFit: "object-cover",
-  },
-  {
     id: "kanban",
     href: "https://vuekanbanapp.netlify.app",
     image: "/images/kanban.png",
