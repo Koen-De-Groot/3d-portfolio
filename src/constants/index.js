@@ -53,12 +53,26 @@ const expCards = [
     imgPath: "/images/vue.png",
     logoPath: "/images/vue.png",
     title: "Frontend Developer - Vue.js",
-    date: "September 2022 - Present",
+    date: "September 2022 - 2026",
     responsibilities: [
       "Developed responsive and interactive user interfaces using Vue.js framework.",
       "Collaborated with design teams to implement pixel-perfect components and user experiences.",
       "Maintained and enhanced existing Vue.js applications with new features and improvements.",
       "Mastered Azure DevOps for project management, CI/CD pipelines, and team collaboration.",
+    ],
+  },
+  {
+    review:
+      "At a digital agency, I brought concepts to life by building websites from the ground up. Working closely with designers and backend Drupal engineers, I bridged the gap between creative vision and technical execution, consistently delivering clean, reusable code that turned ambitious ideas into polished, working solutions.",
+    imgPath: "/images/next.png",
+    logoPath: "/images/next.png",
+    title: "Frontend Developer - Next.js",
+    date: "2026 - Present",
+    responsibilities: [
+      "Built and shipped client websites at a digital agency, transforming design concepts into fully functional solutions.",
+      "Collaborated daily with designers to translate mockups into pixel-perfect, responsive interfaces.",
+      "Partnered with backend Drupal engineers to integrate frontend components with content management systems.",
+      "Wrote clean, reusable, and maintainable code with Next.js to ensure scalable and consistent project delivery.",
     ],
   },
   {
