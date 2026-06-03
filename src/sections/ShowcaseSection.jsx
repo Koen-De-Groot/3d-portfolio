@@ -96,7 +96,7 @@ const AppShowcase = () => {
                 {/* Text content */}
                 <div className="flex flex-col justify-center space-y-6 lg:order-1">
                   <div className="space-y-4">
-                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full border text-sm font-medium">
                       Flagship Project
                     </div>
                     <h2 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent leading-tight">
